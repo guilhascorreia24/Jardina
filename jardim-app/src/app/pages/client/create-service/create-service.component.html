@@ -1,0 +1,14 @@
+<h3>Solicitar Novo Serviço</h3>
+
+<form (ngSubmit)="onSubmit()" #formRef="ngForm">
+  <label>Descrição:</label>
+  <input type="text" [(ngModel)]="form.description" name="description" required />
+
+  <label>Endereço:</label>
+  <input type="text" [(ngModel)]="form.address" name="address" required />
+
+  <label>ID do Jardineiro:</label>
+  <input type="number" [(ngModel)]="form.gardener_id" name="gardener_id" required />
+
+  <button type="submit">Solicitar</button>
+</form>

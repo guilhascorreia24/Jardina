@@ -1,0 +1,16 @@
+<h2>Registar</h2>
+<form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+  <label>Nome:</label>
+  <input type="text" [(ngModel)]="form.name" name="name" required />
+
+  <label>Email:</label>
+  <input type="email" [(ngModel)]="form.email" name="email" required />
+
+  <label>Palavra-passe:</label>
+  <input type="password" [(ngModel)]="form.password" name="password" required />
+
+  <label>É jardineiro?</label>
+  <input type="checkbox" [(ngModel)]="form.is_gardener" name="is_gardener" />
+
+  <button type="submit">Registar</button>
+</form>

@@ -1,0 +1,23 @@
+.layout {
+    font-family: 'Segoe UI', sans-serif;
+  
+    .header {
+      background: #3e8e41;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      nav a {
+        margin-left: 1rem;
+        text-decoration: none;
+        color: white;
+      }
+    }
+  
+    .content {
+      padding: 2rem;
+    }
+  }
+  

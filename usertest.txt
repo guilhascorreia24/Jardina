@@ -1,0 +1,12 @@
+{
+  "name": "gui",
+  "email": "gui@test.com",
+  "password": "test1234",
+  "is_gardener": true
+}
+
+
+{
+  "description": "cortar relva",
+  "gardener_id": 1
+}

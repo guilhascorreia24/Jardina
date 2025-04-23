@@ -1,0 +1,9 @@
+<h3>Meus Serviços</h3>
+<ul>
+  <li *ngFor="let s of services">
+    {{ s.description }} ({{ s.status }})
+    <button *ngIf="s.status === 'pendente'" (click)="confirmService(s.id)">
+      Confirmar Conclusão
+    </button>
+  </li>
+</ul>
