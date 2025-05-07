@@ -1,0 +1,14 @@
+<h2>Área do Jardineiro</h2>
+<p>Services loaded: {{ services.length }}</p>
+
+<ul>
+  <li *ngFor="let s of services">
+    <strong>{{ s.description }}</strong><br />
+    Cliente {{ s.client_name }}<br />
+    Status: {{ s.status }}<br />
+    <button *ngIf="s.status === 'pendente'" (click)="markAsDone(s.id)">
+      Marcar como Concluído
+    </button>
+  </li>
+</ul>
+<p>Below the list</p>

@@ -71,7 +71,9 @@ def list_pending_services(
         Service.gardener_id == gardenerid.id,
         Service.status == "pendente"
     ).all()
-
+    for service in services:
+        client = db.query(UserModel).filter(UserModel.id == service.client_id).first()
+        service.client_name = client.name if client else "Desconhecido"
     return services
 
 @router.post("/confirm_service/{service_id}")

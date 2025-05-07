@@ -5,6 +5,12 @@
         <a routerLink="/dashboard">Dashboard</a>
         <a routerLink="/auth/login">Login</a>
         <a routerLink="/auth/register">Registar</a>
+        <a *ngIf="isGardener" routerLink="/gardener/dashboard">Área Jardineiro</a>
+        <a *ngIf="!isGardener" routerLink="/client/dashboard">Área Cliente</a>
+        <a routerLink="/notifications">
+          🔔 Notificações
+          <span *ngIf="unreadCount > 0" class="badge">{{ unreadCount }}</span>
+        </a>
       </nav>
     </header>
   

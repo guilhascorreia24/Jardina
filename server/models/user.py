@@ -8,3 +8,5 @@ class User(Base):
     email = Column(String, unique=True, index=True, nullable=False)
     password = Column(String, nullable=False)
     is_gardener = Column(Boolean, default=False)
+    google_refresh_token = Column(String, nullable=True)
+

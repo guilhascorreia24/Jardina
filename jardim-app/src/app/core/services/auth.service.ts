@@ -21,6 +21,7 @@ export class AuthService {
     return this.http.post<any>(`${this.baseUrl}/login`, body.toString(), { headers }).pipe(
       tap(response => {
         localStorage.setItem('token', response.access_token);
+        localStorage.setItem('isGardener', response.is_gardener);
         this.tokenSubject.next(response.access_token);
       })
     );
@@ -32,5 +33,9 @@ export class AuthService {
 
   getToken() {
     return this.tokenSubject.value || localStorage.getItem('token');
+  }
+
+  getGardenerStatus() {
+    return localStorage.getItem('isGardener') === 'true';
   }
 }

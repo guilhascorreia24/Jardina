@@ -7,8 +7,13 @@
   <label>Endereço:</label>
   <input type="text" [(ngModel)]="form.address" name="address" required />
 
-  <label>ID do Jardineiro:</label>
-  <input type="number" [(ngModel)]="form.gardener_id" name="gardener_id" required />
+  <label>Escolher Jardineiro:</label>
+  <select [(ngModel)]="form.gardener_id" name="gardener_id" required>
+    <option value="">-- Selecione --</option>
+    <option *ngFor="let g of gardeners" [value]="g.id">
+      {{ g.name }} ({{ g.city }})
+    </option>
+  </select>
 
   <button type="submit">Solicitar</button>
 </form>

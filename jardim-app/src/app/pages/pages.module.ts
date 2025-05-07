@@ -8,7 +8,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardClientComponent } from './client/dashboard-client/dashboard-client.component';
 import { CreateServiceComponent } from './client/create-service/create-service.component';
 import { MyServicesComponent } from './client/my-services/my-services.component';
+import { DashboardGardenerComponent } from './gardener/dashboard-gardener/dashboard-gardener.component';
+import { NotificationsComponent } from './notifications/notifications/notifications.component';
+import { LOCALE_ID } from '@angular/core';
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -17,11 +24,14 @@ import { MyServicesComponent } from './client/my-services/my-services.component'
     DashboardComponent,
     DashboardClientComponent,
     CreateServiceComponent,
-    MyServicesComponent
+    MyServicesComponent,
+    DashboardGardenerComponent,
+    NotificationsComponent,
   ],
   imports: [
+    PagesRoutingModule,
     CommonModule,
-    PagesRoutingModule
-  ]
+  ],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt' }]
 })
 export class PagesModule { }
